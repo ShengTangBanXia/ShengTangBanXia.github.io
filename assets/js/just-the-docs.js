@@ -79,9 +79,9 @@ function initSearch() {
 
       var index = lunr(function(){
         this.use(lunr.multiLanguage('en', 'zh'));
-        this.tokenizer = function (x) {
+        /*this.tokenizer = function (x) {
           return lunr.tokenizer(x).concat(lunr.zh.tokenizer(x));
-        };
+        };*/
         this.ref('id');
         this.field('title', { boost: 200 });
         this.field('content', { boost: 2 });
