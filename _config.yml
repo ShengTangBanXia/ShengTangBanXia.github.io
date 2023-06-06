@@ -48,6 +48,7 @@ exclude:
    - Dockerfile
  # theme test code
    - fixtures/
+   - assets/css/just-the-docs-switchable-src.css
 
 # Set a path/url to a logo that will be displayed instead of the title
 logo: "/assets/images/blog-log.png"
