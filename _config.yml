@@ -51,7 +51,7 @@ exclude:
    - assets/css/just-the-docs-switchable-src.css
 
 # Set a path/url to a logo that will be displayed instead of the title
-logo: "/assets/images/blog-log.png"
+logo: "/assets/favicon/favicon-32x32.png"
 # Set a path/url to a favicon that will be displayed by the browser
 # favicon_ico: "/assets/images/blog-log.png"
 
