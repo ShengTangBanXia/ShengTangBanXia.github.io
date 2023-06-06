@@ -1,4 +1,5 @@
-{{ site.title }}
 {% if site.logo %}
-<div class="site-logo" role="img" aria-label="{{ site.title }}"></div>
+  <div class="site-logo" role="img" aria-label="{{ site.title }}">{{ site.title }}</div>
+{% else %}
+  {{ site.title }}
 {% endif %}
