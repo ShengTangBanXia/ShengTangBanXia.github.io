@@ -1,3 +1,8 @@
+---
+layout: default
+title: 安装Docker
+nav_order: 2
+---
 # 安装
 ```shell
 yum -y update
