@@ -76,10 +76,9 @@ docker exec -it test /bin/bash
 docker exec -it -e VAR=1 test /bin/bash
 ```
 
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--detach, -d` | 后台执行命令 |
@@ -101,10 +100,10 @@ docker exec -it -e VAR=1 test /bin/bash
 docker history test
 docker history fa7a39ee72ff
 ```
-:::info
+
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--format` | 以GO模板输出指定的镜像属性 |
@@ -121,10 +120,9 @@ docker history fa7a39ee72ff
 docker imgaes test
 docker images test:v1
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--all, -a` | 输出所有镜像，默认是隐藏了中间镜像 |
@@ -144,10 +142,9 @@ docker inspect test
 ```
 > 1. 如果存在容器和镜像的NAME相同，则使用此命令用NAME查看的将会是容器信息，若想查看镜像信息，需要用镜像ID查看
 
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--format, -f` | 以GO模板输出指定的镜像属性 |
@@ -173,10 +170,9 @@ docker logs -tf --until 2m test | docker logs -tf --until 2023-01-09T02:15:02 te
 # 查看过去第三分钟内的日志
 docker logs -tf --since 3m --until 2m test
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--details` | 显示日志额外的详细信息 |
@@ -196,10 +192,9 @@ docker ps -a
 查看所有容器名中包含test字符串的容器
 docker ps -a | grep test
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--all, -a` | 显示所有的容器，默认只显示正在运行的容器 |
@@ -217,7 +212,6 @@ docker ps -a | grep test
 >    - num2表示的是容器对应的只读镜像的数据量大小
 
 ## 过滤选项
-:::info
 
 - 使用过滤时，可过滤的选项如下
    - **id**：容器ID，可以使用长ID，短ID或者ID的开头片段，匹配所有容器ID中以指定字符串开头的容器
@@ -264,9 +258,8 @@ docker ps -a | grep test
    - **is-task**：筛选是或不是服务任务的容器
       - `docker ps -f is-task=true`
       - `docker ps -f is-task=false`
-:::
+
 ## 格式化有效占位符
-:::info
 
 - 使用格式化输出时，有效的占位符如下
    - `**.ID**`：网络ID
@@ -298,7 +291,7 @@ docker ps -a | grep test
    - `**.Networks**`：容器连接的网络名称
       - `docker ps -a --format "网络名称是：{{.Networks}}"`
 - 一次命令可以使用多个占位符
-:::
+
 # docker pull
 
 1. 作用：从远程仓库拉去镜像
@@ -311,10 +304,9 @@ docker pull httpd:2.4
 # 通过镜像名和版本以及摘要拉取
 docker pull httpd:2.4@sha256:f2e89def4c032b02c83e162c1819ccfcbd4ea6bdbc5ff784bbc68cba940a9046
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--all-tags, -a` | 下载镜像所有的版本 |
@@ -337,10 +329,9 @@ docker image tag my-httpd:v1.0.1 registry-host:5000/myadmin/my-httpd:v1.0.1
 # 将镜像推送到本地仓库
 docker image push registry-host:5000/myadmin/my-httpd:v1.0.1
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--all-tags, -a` | 推送镜像所有的版本 |
@@ -368,10 +359,9 @@ docker rename 44c3eb9647b2 httpd2
 docker restart httpd
 docker restart 44c3eb9647b2
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--time, -t` | kill docker进程之前需要等待的秒数，默认为10 |
@@ -383,10 +373,9 @@ docker restart 44c3eb9647b2
 ```shell
 docker rm test
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--force, -f` | 强制删除正在运行的容器(使用SIGKILL) |
@@ -404,10 +393,9 @@ docker rm test
 docker rmi test
 docker rmi fd484f19954f
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--force, -f` | 强制删除镜像 |
@@ -420,10 +408,9 @@ docker rmi fd484f19954f
 ```shell
 docker start test
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--attach, -a` | 连接到STDOUT/STDIN，并转发信号 |
@@ -435,10 +422,9 @@ docker start test
 ```shell
 docker stop test
 ```
-:::info
 
 - OPTIONS参考如下：
-:::
+
 | **name** | **描述** |
 | --- | --- |
 | `--time, -t` | kill docker进程之前需要等待的秒数，默认为10 |
