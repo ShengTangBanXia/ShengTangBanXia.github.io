@@ -24,22 +24,21 @@ docker build -t test3:v1.0.0.3 - < context.tar.gz
 ```
 
 3. 注意事项
-:::info
+> 1. 当用PATH进行构建时，PATH指定了构建时的上下文的的文件位置
+> 2. PATH里需要包含Dockerfile，而且会把当前目录的所有文件上传到docker守护程序
+> 3. PATH可以是一个目录
+> 4. 当用URL时，若URL是git仓库链接，则会使用`git clone --recursive`命令递归的克隆仓库及其子模块的内容
+> 5. URL还可以是一个标准的TAR压缩包
+> 6. 当使用 - 模式时，将会从STDIN读取Dockerfile，并且没有上下文，所以进行`ADD`指令操作时，只能通过引用的方式添加文件
+> 7. `-`模式也可以支持TAR包
 
-- 当用PATH进行构建时，PATH指定了构建时的上下文的的文件位置
-- PATH里需要包含Dockerfile，而且会把当前目录的所有文件上传到docker守护程序
-- PATH可以是一个目录
-- 当用URL时，若URL是git仓库链接，则会使用`git clone --recursive`命令递归的克隆仓库及其子模块的内容
-- URL还可以是一个标准的TAR压缩包
-- 当使用 - 模式时，将会从STDIN读取Dockerfile，并且没有上下文，所以进行`ADD`指令操作时，只能通过引用的方式添加文件
-- - 模式也可以支持TAR包
-:::
 # docker cp
 
 1. 作用：从容器复制文件到本地，或者从本地复制文件到容器
 2. 指令格式：
    1. `docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-`
    2. `docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH`
+
 ```shell
 # 容器文件复制到本地 docker cp <CONTAINER_NAME> | <CONTAINER_ID>:/FILE_NAME /LOCAL_PATH/
 docker cp test:/myvol/greeting ./myvol/
@@ -49,8 +48,8 @@ docker cp ./myvol/test.txt test:/myvol
 docker cp ./myvol/test.txt 15dade8190d1:/myvol
 # 将容器文件作为TAR存档流式输出到本地
 docker cp test:/myvol/greeting - > test.tar
-
 ```
+
 > - 当SRC_PATH是一个文件时有如下情况：
 
 |  | **以'/'结尾** | **不以'/'结尾** | **是一个文件** | **是一个文件夹** |
@@ -76,6 +75,7 @@ docker cp test:/myvol/greeting - > test.tar
 docker exec -it test /bin/bash
 docker exec -it -e VAR=1 test /bin/bash
 ```
+
 :::info
 
 - OPTIONS参考如下：
