@@ -1,3 +1,9 @@
+---
+layout: default
+title: Spring
+nav_order: 1
+---
+
 # 1、Spring框架是什么？
 
 Spring是一个开源的**一站式轻量级**JavaEE框架，是为了解决企业应用程序开发复杂性而创建的。Spring框架旨在提供一种**简单、灵活、易于扩展的开发模式**，帮助开发人员快速搭建企业级应用。Spring使用基本的Java Bean来完成以前只能由EJB(Enterprise Java Beans,企业Java Bean)完成的事情。Spring的用途很广泛，从简单性、可测试性、和松耦合的角度而言，任何Java应用都能从中受益。
