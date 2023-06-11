@@ -192,7 +192,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   interview:
-    output: false
+    output: true
     permalink: /interview/
 just_the_docs:
   # Define which collections are used in just-the-docs
